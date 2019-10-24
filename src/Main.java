@@ -4,75 +4,29 @@
 public class Main {
     public static void main(String[] args) {
 
-//        Instrukcje sterujące
+//        TABLICE
 
-//        1) IF
-//        int number = 3;
-//        if (number % 2 == 0) {
-//            System.out.println("Liczba = " + number + ", parzysta");
-//        } else if (number % 3 == 0) {
-//            System.out.println("Liczba = " + number + ", nieparzysta i podzielna przez 3");
-//        } else {
-//            System.out.println("Liczba = " + number + ", nieparzysta");
-//        }
+//        1) tablice jednowymiarowe
+        String imie1 = "Ala";
+        String imie2 = "Michał";
 
+        String[] tablicaImion1 = new String[10];
+        String[] tablicaImion2 = {imie1, imie2, "Robert", "Rafał"};
 
-//        2) IF cd
-//        int number = 15;
-//        if (number % 2 == 0 && number > 0) {
-//            System.out.println("Liczba = " + number + ", parzysta i większa od zera");
-//        } else if (number % 3 == 0 || number % 5 == 0) {
-//            System.out.println("Liczba = " + number + ", nieparzysta i podzielna przez 3 lub 5");
-//        } else {
-//            System.out.println("Liczba = " + number + ", nieparzysta");
-//        }
-//        && ||  &  >,<.==,
+        System.out.println(tablicaImion2[0]);
+        System.out.println(tablicaImion2[1]);
+        System.out.println(tablicaImion2[2]);
+        System.out.println(tablicaImion2[3]);
+        System.out.println("Ilość elementów w tablicyImion2: " + tablicaImion2.length);
 
 
-//        3) equals i equalsIgnoreCase
-//        String imie = "ala";
-//        if (imie.equals("Ala")) {
-//            System.out.println("imie = " + imie);
-//        } else if (imie.equalsIgnoreCase("Ala")) {
-//            System.out.println("Jednak imie = " + imie);
-//        }
+//        2) tablice dwuwymiarowe
+        int[][] matrix = new int[3][3];
+        matrix[1][1] = 2;
+        matrix[0][0] = 1;
+        matrix[2][2] = 0;
 
-//        4) switch
-          int monthNumber = 3;
-          String monthName = "";
-          switch (monthNumber){
-              case 1:
-                  monthName = "Styczeń";
-                  System.out.println("monthName = " + monthName);
-                  break;
-              case 2:
-                  monthName = "Luty";
-                  System.out.println("monthName = " + monthName);
-                  break;
-              case 3:
-              case 4:
-                  monthName = "Marzec lub Kwiecień";
-                  System.out.println("monthName = " + monthName);
-                  break;
-              default:
-                  System.out.println("Nie ma takiego miesiąca");
-                  break;
-          }
-          switch (monthName){
-              case "Styczeń":
-                  System.out.println("monthNumber = 1");
-                  break;
-              case "Luty":
-                  System.out.println("monthNumber = 2");
-                  break;
-              case "Marzec lub Kwiecień":
-                  System.out.println("monthNumber = 3 lub 4");
-                  break;
-              default:
-                  System.out.println("Inny numer miesiąca");
-                  break;
-          }
-
+        System.out.println(matrix[0][0] + " " + matrix[1][1] + " " + matrix[2][2]);
 
 
     }
