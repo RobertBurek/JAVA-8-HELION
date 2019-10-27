@@ -5,125 +5,118 @@ import java.util.Scanner;
  * Created by Robert Burek
  */
 public class Main {
+
+////    3) Pola statyczne i niestatyczne
+//    static int staticField;
+//    int nonStaticfIELD;
+//
+////    4) Zasięg zmiennych i metod
+////    static void staticMethod() {
+////        System.out.println("staticField = " + staticField);
+////        int staticMethodField = 0;
+////    }
+////    void method() {
+////        //System.out.println("nonstaticField = " + nonStaticField);
+////        System.out.println("staticField = " + staticField);
+////        int methodField = 0;
+////    }
+
     public static void main(String[] args) {
 
-//        PĘTLE
+//        KLASA  Rectangle  i OBIEKT (metody i pola)
 
-//        1) FOR
-//        for(int i=0 ; i<=10 ; i+=2){
-//            System.out.println("i = " + i);
-//        }
-//        int[] array = {1,4,2,3,6,9};
-//        for (int i=0;i<array.length;i++) {
-//            System.out.println("i = " + i + ", value = "+ array[i]);
-//        }
+//        Rectangle rectangle1 = new Rectangle(10, 20);
+//        Rectangle rectangle2 = new Rectangle(30, 15);
+//
+//        System.out.println("rectangle1.perimeter = " + rectangle1.perimeter());
+//        System.out.println("rectangle2.perimeter = " + rectangle2.perimeter());
+//        System.out.println("rectangle1.area = " + rectangle1.area());
+//        System.out.println("rectangle2.area = " + rectangle2.area());
 
-//        2) FOREACH
-//        int[] array = {1,4,2,3,6,9,0,5,8,7};
-//        for(int value : array){
-//            System.out.println("value = " + value);
-//        }
+////        1) METODY
+//        System.out.println("a+b = " + sum(3, 6));
+//        System.out.println("a+b = " + sum(5.0, 12.0));
 
-//        3) Sortowanie bombelkowe
-//        int[] array = {1, 4, 2, 3, 6, 9, 0, 5, 8, 7};
-//        for (int i = 0; i < array.length; i++) {
-//            for (int j = 1; j < (array.length - i); j++) {
-//                if (array[j - 1] > array[j]) {
-//                    int temp = array[j - 1];
-//                    array[j - 1] = array[j];
-//                    array[j] = temp;
-//                }
-//            }
-//            System.out.print("iteracja " + i + ", array: ");
-//            for (int value : array) {
-//                System.out.print(value + ", ");
-//            }
-//            System.out.println();
-//        }
+////        2) POLA w klasie
+//        Rectangle rectangle = new Rectangle(10, 20);
+//        System.out.println(Rectangle.MAX_HEIGHT);
+//        System.out.println(Rectangle.MAX_WIDTH);
+//        rectangle.width = 100;
+//        rectangle.height = 200;
+//        Rectangle.staticMethod();
+//        rectangle.classMethod();
 
-//        4) WHILE()
-//        int[] array = {1, 4, 2, 3, 6, 9, 0, 5, 8, 7};
-//        int i=0;
-//        while(i<array.length){
-//            System.out.println("array["+i+"] = "+array[i]);
+////        3) Pola statyczne i niestatyczne
+//        System.out.println("staticField : " + staticField);
+//        //System.out.println("nonStaticField : " + nonStaticField);
+
+
+////        4) Zasięg zmiennych i metod
+//        boolean mainMethodField = true;
+//        int secondMainMethodField = 0;
+//        for (int i = 0; i < 10; i++) {
 //            i++;
+//            System.out.println("secondMainMethodField = " + secondMainMethodField);
+//            int fieldInFor = 0;
+//            System.out.println("fieldInFor = " + fieldInFor);
+//        }
+//         //System.out.println("fieldInFor = " + fieldInFor);  // zmienna nie ma zasięgu
+//        if (mainMethodField) {
+//            System.out.println("secondMainMethodField = " + secondMainMethodField);
+//            System.out.println("staticField = " + staticField);
 //        }
 
-//        5) DO WHILE()
-//        int[] array = {1, 4, 2, 3, 6, 9, 0, 5, 8, 7};
-//        int i = 0;
-//        do {
-//            System.out.println("array[" + i + "] = " + array[i]);
-//            i++;
-//        } while (i < array.length);
+//        5) Maszyna do kawy cd..
 
-//        6) Przerywanie pętli BREAK
-//      int[] array = {1, 4, 2, 3, 6, 9, 0, 5, 8, 7};
-//      int i = 0;
-//          do {
-//          System.out.println("array[" + i + "] = " + array[i]);
-//          i++;
-//          if (i==5) break;
-//      } while (i < array.length);
-
-
-//        7) CONTINUE
-//        int[] array = {1, 4, 2, 3, 6, 9, 0, 5, 8, 7};
-//        for(int i = 0; i<array.length; i++){
-//            System.out.println("array[" + i + "] = " + array[i]);
-//            if (array[i]%2==0) continue;
-//            System.out.println("     powyżej jest nieparzysta");
-//        }
-
-//        8) Etykieta
-//        int[] numbers = {1, 4, 2, 3, 6, 9, 0, 5, 8, 7};
-//        etykieta:
-//        for (int j = 0; j < 10; j++) {
-//            https://robertburek.pl
-//            for (int i = 0; i < numbers.length; i++) {
-//                System.out.println("numbers[" + i + "] = " + numbers[i]);
-//                numbers[i]++;
-//                if (numbers[i] > 6) break etykieta;
-//            }
-//            System.out.println("Pętla zewnetrza");
-//        }
-
-//        8) Maszyna do kawy cd..
-        int iloscKaw = 0;
-        int proba = 0;
-        System.out.print("Kawa: [B] - z mlekiem ,  [C] - czarna : ");
         Scanner interfejsUzytkownika = new Scanner(System.in);
-        String typKawy = interfejsUzytkownika.next();
-        if (typKawy.equalsIgnoreCase("b") || typKawy.equalsIgnoreCase("c")) {
-            do {
-                System.out.print("Podaj liczbe kaw: ");
-                try {
-                    proba++;
-                    iloscKaw = interfejsUzytkownika.nextInt();
-                } catch (InputMismatchException ex) {
-                    System.out.println("Błędne dane!!!");
-                }
-                System.out.print("Zamówiono " + iloscKaw + " ");
-                switch (typKawy) {
-                    case "B":
-                    case "b":
-                        System.out.println("kaw z mlekiem");
-                        break;
-                    case "C":
-                    case "c":
-                        System.out.println("kaw czarnych");
-                        break;
-                }
-            } while (proba < 3 && iloscKaw <= 0);
+        String typKawy = getTypKawy(interfejsUzytkownika);
+        if (typKawy.equalsIgnoreCase(BIALA_KAWA) || typKawy.equalsIgnoreCase(CZARNA_KAWA)) {
+            getLiczbaKaw(interfejsUzytkownika, typKawy);
         } else {
             System.out.println("Brak podanego typu kawy");
         }
     }
 
+    static final String BIALA_KAWA = "B";
+    static final String CZARNA_KAWA = "C";
+    static final int ILOSC_PROB = 3;
 
-    private static void swapElements(int[] array, int j) {
-        int temp = array[j - 1];
-        array[j - 1] = array[j];
-        array[j] = temp;
+    static void getLiczbaKaw(Scanner interfejsUzytkownika, String typKawy) {
+        int iloscKaw = 0;
+        int proba = 0;
+        do {
+            System.out.print("Podaj liczbe kaw: ");
+            try {
+                proba++;
+                iloscKaw = interfejsUzytkownika.nextInt();
+            } catch (InputMismatchException ex) {
+                System.out.println("Błędne dane!!!");
+            }
+            pokazZamowienie(iloscKaw, typKawy);
+        } while (proba < ILOSC_PROB && iloscKaw <= 0);
     }
+
+    static void pokazZamowienie(final int iloscKaw, final String typKawy) {
+        System.out.print("Zamówiono " + iloscKaw);
+        if (typKawy.equalsIgnoreCase(BIALA_KAWA)) {
+            System.out.println(" kaw z mlekiem");
+        } else if (typKawy.equalsIgnoreCase(CZARNA_KAWA)) {
+            System.out.println(" kaw czarnych");
+        }
+        System.out.println("Pamiętaj o cukrze!");
+    }
+
+    //    5) Maszyna do kawy
+    static String getTypKawy(Scanner interfejsUzytkownika) {
+        System.out.print("Kawa: [B] - z mlekiem ,  [C] - czarna : ");
+        return interfejsUzytkownika.next();
+    }
+
+////    1) Metody
+//    static int sum(int a, int b) {
+//        return a + b;
+//    }
+//    static double sum(double a, double b) {
+//        return a + b;
+//    }
 }
