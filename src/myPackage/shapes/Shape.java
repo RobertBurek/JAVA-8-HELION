@@ -3,20 +3,16 @@ package myPackage.shapes;
 /**
  * Created by Robert Burek
  */
-class Shape {
+public abstract class Shape {
 
-    Shape() {
-        System.out.println("Konstruktor z SHAPE.");
-        System.out.println("w konstruktorze SHAPE: " + getName());
-    }
+//    public Shape() {
+//        System.out.println("Konstruktor z SHAPE.");
+//        System.out.println("w konstruktorze SHAPE: " + getName());
+//    }
 
-    int countPerimeter() {
-        return 0;
-    }
+    abstract int countPerimeter();  //brak ciała metody abstrakcyjnej, trzeba implementować w klasie dziedziczącej
 
-    int countArea() {
-        return 0;
-    }
+    abstract int countArea();   //brak ciała metody abstrakcyjnej, trzeba implementować w klasie dziedziczącej
 
     public String getName() {
         return getClass().getSimpleName();
