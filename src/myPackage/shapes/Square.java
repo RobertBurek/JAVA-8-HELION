@@ -13,6 +13,9 @@ public final class Square extends Shape {
     }
 
     public Square(int size) {
+        if (size <= 0) {
+                throw new IllegalArgumentException();
+        }
         this.size = size;
     }
 

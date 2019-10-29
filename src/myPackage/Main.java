@@ -7,89 +7,86 @@ public class Main {
 
     public static void main(String[] args) {
 
-//        KOLEKCJE (list, set, map) oraz (equels, hashcode)
+//        WYJĄTKI I STRING (stringBuilder)
 
-////        1) LIST (ArrayList, LinkedList)
-//        List<String> listWithNames = new ArrayList<>();
-//        listWithNames.add("Michal");
-//        listWithNames.add("Marek");
-//        listWithNames.add("Robert");
-//
-//        List<String> secondListWithNames = new LinkedList<>();
-//        secondListWithNames.add("Michal");
-//        secondListWithNames.addAll(listWithNames);
-//        secondListWithNames.add("Ala");
-//
-//        System.out.println(secondListWithNames.contains("Monika"));
-//        System.out.println(secondListWithNames.get(0));
-//        System.out.println(secondListWithNames.isEmpty());
-//        System.out.println(secondListWithNames.indexOf("Michal"));
-//        System.out.println(secondListWithNames.lastIndexOf("Michal"));
-//        int i = 0;
-//        for (String name : secondListWithNames) {
-//            System.out.println(i+") name = " + name);
-//            i++;
+////        1) wyjątki
+//        int size = -4;
+//        try {
+//            Square square = new Square(size);
+//            System.out.println("squareMetod = " + square.countArea());
+//            System.exit(0);
+//        } catch (IllegalArgumentException iae) {
+//            System.out.println("Niepoprawne dane dla stworzenia obiektu square.");
+//        }
+//        try {
+//            System.out.println("staticMetod = " + countArea(size));
+//        } catch (IllegalArgumentException iae) {
+////                iae.printStackTrace();
+//            System.out.println("Info dla staticMetod: " + iae.getMessage());
+////            System.exit(0);
+//        } finally {
+//            System.out.println("Blok finally"); //wykona się zawsze chyba że System.exit(0);
 //        }
 
-////        2) SET (HashSet)
-//        Set<String> mySet = new HashSet<>();
-//        mySet.add("Michal");
-//        mySet.add("Ala");
-//        mySet.add("Marcin");
-//        System.out.println("Przed:");
-//        for(String name : mySet) {
-//            System.out.println("name = " + name);
-//        }
-//        mySet.add("Michal");
-//        System.out.println("Po:");
-//        for(String name : mySet) {
-//            System.out.println("name = " + name);
-//        }
+////        2) zarządzanie pamięcią
+//        System.gc();
+////        Stos- Stack - zmienne lokalne (StackOwerFlow),
+////        Sterta - Heap - zmienne instacji klas i obiekty.
+
+////        3) STRING - nietypowy obiekt (niemutowalny)
+//        String a = "ala";
+//        String b = "ala";
+//        System.out.println("Porównanie 1 :" + a.equals(b));
+//        System.out.println("Porównanie 2 :" + (a == b));
+//        String c = new String("ala");
+//        System.out.println("Porównanie 3 :" + a.equals(c));
+//        System.out.println("Porównanie 4 :" + (a == c));
 //
-//        System.out.println(mySet.isEmpty());
-//        System.out.println(mySet.size());
-//        System.out.println(mySet.contains("Marcin"));
-//        System.out.println(mySet.remove("Janusz"));
+//        String d1 = "ala ma kota";
+//        String d2 = "ala" + " ma kota";
+//        System.out.println("Porównanie 1 :" + d1.equals(d2));
+//        System.out.println("Porównanie 2 :" + (d1 == d2));
 
-////        3) MAP (HashMap)
-//        Map<String, Integer> mapOfNamesAndAge = new HashMap<>();
-//        mapOfNamesAndAge.put("Michal", 33);
-//        mapOfNamesAndAge.put("Agnieszka", 31);
-//        mapOfNamesAndAge.put("Zosia", 6);
-//        mapOfNamesAndAge.put("Stas", 6);
-//        mapOfNamesAndAge.put("Zosia", 8);
-//
-//        System.out.println(mapOfNamesAndAge.get("Michal"));
-//        System.out.println(mapOfNamesAndAge.remove("Stas"));
-//        System.out.println(mapOfNamesAndAge.size());
-//        System.out.println(mapOfNamesAndAge.isEmpty());
-//        System.out.println(mapOfNamesAndAge.containsKey("Adam"));
-//        System.out.println(mapOfNamesAndAge.containsValue(31));
-//        for (String key : mapOfNamesAndAge.keySet()) {
-//            Integer value = mapOfNamesAndAge.get(key);
-//            System.out.println(key + ": " + value);
-//        }
+//        4) String a StringBuilder
+        String sample =stringSample();
+        String builderSample =stringBuilderSample();
+        System.out.println("-------------------------------");
+        System.out.println("Czy są takie same: " +sample.equals(builderSample));
 
-//        4) Equels i HashCode
-//        SampleClass sampleClass = new SampleClass("Robert","Nowak",35);
-//        SampleClassTwo sampleClassTwo = new SampleClassTwo("Robert","Nowak",35);
-//        System.out.println("sampleClass hashCode = " + sampleClass.hashCode());
-//        System.out.println("sampleClassTwo hashCode = " + sampleClassTwo.hashCode());
-//        System.out.println("różnica hashcodów = " + (sampleClassTwo.hashCode()-sampleClass.hashCode()));
-//        System.out.println("czy równe klasy = " + sampleClass.equals(sampleClassTwo));
-//        System.out.println("czy równe obiekty= " + ((Object)sampleClass).equals((Object)sampleClassTwo));
 
-        SampleOther sampleOther1 = new SampleOther("Robert","Nowak",35);
-        SampleOther sampleOther2 = new SampleOther("Robert","Nowak",20);
-        System.out.println("sampleOther1 hashCode = " + sampleOther1.hashCode());
-        System.out.println("sampleOther2 hashCode = " + sampleOther2.hashCode());
-        System.out.println("różnica hashcodów = " + (sampleOther1.hashCode()- sampleOther2.hashCode()));
-        System.out.println("czy równe klasy = " + sampleOther1.equals(sampleOther2));
-        System.out.println("czy równe obiekty= " + ((Object) sampleOther1).equals((Object) sampleOther2));
-        System.out.println("-----------------------------------------------------");
-        System.out.println("sampleOther1 myhashCode = " + sampleOther1.myhashCode());
-        System.out.println("sampleOther2 myhashCode = " + sampleOther2.myhashCode());
-        System.out.println("różnica myhashcodów = " + (sampleOther1.myhashCode()- sampleOther2.myhashCode()));
+    }
 
+//    4)
+    private static String stringBuilderSample() {
+        String s = "a";
+        long start = System.nanoTime();
+        StringBuilder sB = new StringBuilder(s);
+
+        for(int i=0; i<10000; i++) {
+            sB.append("a");
+        }
+
+        s = sB.toString();
+        System.out.println("Time for StringBuilder: "+(System.nanoTime()-start));
+        return s;
+    }
+    private static String stringSample() {
+        String s = "a";
+        long start = System.nanoTime();
+        for(int i=0; i<10000; i++) {
+            s = s+"a"; //s = new StringBuilder(s).append("a").toString();
+        }
+        System.out.println("Time for String: "+(System.nanoTime()-start));
+        return s;
+    }
+
+
+//    1)
+    public static int countArea(int size) {
+//        if (size <= 0) {return 0;}
+        if (size <= 0) {
+            throw new IllegalArgumentException("Bok musi być dodatni");
+        }
+        return size * size;
     }
 }
