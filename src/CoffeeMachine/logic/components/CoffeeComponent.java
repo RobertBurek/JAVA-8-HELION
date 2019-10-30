@@ -12,9 +12,9 @@ public class CoffeeComponent extends Component {
     boolean withSugar;
 
 
-    public CoffeeComponent(Storage storage, UserInterface userInterface,boolean withSugar) {
+    public CoffeeComponent(Storage storage, UserInterface userInterface, boolean withSugar) {
         super(storage, userInterface);
-        this.withSugar=withSugar;
+        this.withSugar = withSugar;
     }
 
     @Override
