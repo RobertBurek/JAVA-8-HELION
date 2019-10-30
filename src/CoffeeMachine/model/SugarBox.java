@@ -3,18 +3,18 @@ package CoffeeMachine.model;
 /**
  * Created by Robert Burek
  */
-class ChocolateBox extends Box {
+public class SugarBox extends Box {
 
-    private static final int MAX_CHOCOLATE = 10;
+    private static final int MAX_SUGAR = 60;
 
     @Override
     void fillIt() {
-        numberOfProduct = MAX_CHOCOLATE;
+        numberOfProduct = MAX_SUGAR;
     }
 
     @Override
     public String toString() {
-        return "ChocolateBox{" +
+        return "SugarBox{" +
                 numberOfProduct +
                 '}';
     }

@@ -32,4 +32,6 @@ abstract class Component {
     }
 
     abstract void tryAddComponent() throws EmptyBoxException;
+
+    abstract String showStorage();
 }

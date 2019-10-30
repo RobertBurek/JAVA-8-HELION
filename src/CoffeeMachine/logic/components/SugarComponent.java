@@ -4,20 +4,19 @@ import CoffeeMachine.logic.view.UserInterface;
 import CoffeeMachine.model.Storage;
 import CoffeeMachine.model.exceptions.EmptyBoxException;
 
-
 /**
  * Created by Robert Burek
  */
-public class ChocolateComponent extends Component {
+public class SugarComponent extends Component {
 
-    public ChocolateComponent(Storage storage, UserInterface userInterface) {
+    public SugarComponent(Storage storage, UserInterface userInterface) {
         super(storage, userInterface);
     }
 
     @Override
     void tryAddComponent() throws EmptyBoxException {
-        storage.getChocolate();
-        userInterface.showStep("Czekolada");
+        storage.getSugar();
+        userInterface.showStep("Cukier");
     }
 
     @Override

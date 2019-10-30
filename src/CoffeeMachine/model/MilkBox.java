@@ -11,4 +11,11 @@ public class MilkBox extends Box {
     void fillIt() {
         numberOfProduct = MAX_MILK;
     }
+
+    @Override
+    public String toString() {
+        return "MilkBox{" +
+                numberOfProduct +
+                '}';
+    }
 }

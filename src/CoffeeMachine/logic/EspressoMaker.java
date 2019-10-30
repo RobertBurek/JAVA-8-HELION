@@ -7,16 +7,22 @@ import CoffeeMachine.logic.view.UserInterface;
  */
 public class EspressoMaker extends Maker {
 
-    EspressoMaker(UserInterface userInterface) {
+    public EspressoMaker(UserInterface userInterface) {
         super(userInterface);
     }
 
     @Override
-    public void makeCoffee() {
-        super.makeCoffee();
+    public void makeCoffee(boolean withSugar) {
+        super.makeCoffee(withSugar);
         boolean status = coffeeComponent.addComponent();
         if (status) {
             userInterface.showCoffeeReady("Espresso gotowe");
         }
     }
+
+    @Override
+    public String showStorage() {
+        return coffeeComponent.showStorage();
+    }
+
 }

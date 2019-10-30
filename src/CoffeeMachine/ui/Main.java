@@ -2,6 +2,7 @@ package CoffeeMachine.ui;
 
 
 import CoffeeMachine.logic.CoffeeMachine;
+import CoffeeMachine.logic.EspressoMaker;
 import CoffeeMachine.logic.LatteMacchiatoMaker;
 import CoffeeMachine.logic.view.UserInterface;
 
@@ -14,7 +15,13 @@ public class Main {
         System.out.println("Witam, wybierz kawę:\n [E] - Espresso\n [L] - Latte");
         CoffeeMachine coffeeMachine;
         coffeeMachine = new LatteMacchiatoMaker(new AdvaceUi());
-        coffeeMachine.makeCoffee();
+        coffeeMachine.makeCoffee(true);
+        coffeeMachine = new EspressoMaker(new AdvaceUi());
+        coffeeMachine.makeCoffee(true);
+        coffeeMachine.makeCoffee(true);
+        coffeeMachine.makeCoffee(true);
+
+        System.out.println(coffeeMachine.showStorage() );
     }
 
     private static class AdvaceUi implements UserInterface {

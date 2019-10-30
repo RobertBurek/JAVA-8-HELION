@@ -8,9 +8,11 @@ import CoffeeMachine.logic.view.UserInterface;
  */
 public interface CoffeeMachine {
 
-    void makeCoffee();
+    void makeCoffee(boolean withSugar);
 
-    void addSugar();
+//    void addSugar();
 
     void setUserInterface(UserInterface userInterface);
+
+    String showStorage();
 }

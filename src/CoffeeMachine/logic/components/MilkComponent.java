@@ -18,4 +18,9 @@ public class MilkComponent extends Component {
         storage.getMilk();
         userInterface.showStep("Mleko");
     }
+
+    @Override
+    String showStorage() {
+        return null;
+    }
 }

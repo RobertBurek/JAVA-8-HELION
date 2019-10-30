@@ -10,11 +10,13 @@ public class Storage {
     CoffeeBox coffeeBox;
     MilkBox milkBox;
     ChocolateBox chocolateBox;
+    SugarBox sugarBox;
 
     private Storage() {
         milkBox = new MilkBox();
         coffeeBox = new CoffeeBox();
         chocolateBox = new ChocolateBox();
+        sugarBox = new SugarBox();
         fillAll();
     }
 
@@ -29,6 +31,7 @@ public class Storage {
         milkBox.fillIt();
         coffeeBox.fillIt();
         chocolateBox.fillIt();
+        sugarBox.fillIt();
     }
 
     public void getCoffee() throws EmptyBoxException {
@@ -47,5 +50,21 @@ public class Storage {
         if (!chocolateBox.takeProduct()) {
             throw new EmptyBoxException("czekolada");
         }
+    }
+
+    public void getSugar() throws EmptyBoxException {
+        if (!sugarBox.takeProduct()) {
+            throw new EmptyBoxException("cukier");
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Storage: " +
+                coffeeBox +
+                ", " + milkBox +
+                ", " + chocolateBox +
+                ", " + sugarBox +
+                '.';
     }
 }

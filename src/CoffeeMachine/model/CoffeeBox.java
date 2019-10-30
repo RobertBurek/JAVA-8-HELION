@@ -12,4 +12,10 @@ class CoffeeBox extends Box {
         numberOfProduct = MAX_COFFEE;
     }
 
+    @Override
+    public String toString() {
+        return "CoffeeBox{" +
+                numberOfProduct +
+                '}';
+    }
 }

@@ -12,11 +12,18 @@ public class LatteMacchiatoMaker extends Maker {
     }
 
     @Override
-    public void makeCoffee() {
-        super.makeCoffee();
+    public void makeCoffee(boolean withSugar) {
+        super.makeCoffee(withSugar);
         boolean status = coffeeComponent.addComponent() && milkComponent.addComponent() && chocolateComponent.addComponent();
         if (status) {
             userInterface.showCoffeeReady("Macchiato gotowe");
         }
+//        coffeeComponent.showStorage();
     }
+
+    @Override
+    public String showStorage() {
+        return coffeeComponent.showStorage();
+    }
+
 }
